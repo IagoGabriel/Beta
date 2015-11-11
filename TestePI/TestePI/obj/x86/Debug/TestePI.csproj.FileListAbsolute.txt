@@ -1,0 +1,19 @@
+c:\users\ifranco\documents\visual studio 2010\Projects\TestePI\TestePI\bin\Debug\TestePI.exe
+c:\users\ifranco\documents\visual studio 2010\Projects\TestePI\TestePI\bin\Debug\TestePI.pdb
+c:\users\ifranco\documents\visual studio 2010\Projects\TestePI\TestePI\obj\x86\Debug\TestePI.Properties.Resources.resources
+c:\users\ifranco\documents\visual studio 2010\Projects\TestePI\TestePI\obj\x86\Debug\TestePI.csproj.GenerateResource.Cache
+c:\users\ifranco\documents\visual studio 2010\Projects\TestePI\TestePI\obj\x86\Debug\TestePI.exe
+c:\users\ifranco\documents\visual studio 2010\Projects\TestePI\TestePI\obj\x86\Debug\TestePI.pdb
+c:\users\ifranco\documents\visual studio 2010\Projects\TestePI\TestePI\obj\x86\Debug\TestePI.Login.resources
+c:\users\ifranco\documents\visual studio 2010\Projects\TestePI\TestePI\obj\x86\Debug\TestePI.Principal.resources
+C:\Users\ifranco\Documents\Visual Studio 2010\Projects\TestePI\TestePI\obj\x86\Debug\TestePI.csprojResolveAssemblyReference.cache
+C:\Users\ucl\Downloads\TestePI\TestePI\obj\x86\Debug\TestePI.exe
+C:\Users\ucl\Downloads\TestePI\TestePI\obj\x86\Debug\TestePI.pdb
+C:\Users\ucl\Downloads\TestePI\TestePI\bin\Debug\TestePI.exe
+C:\Users\ucl\Downloads\TestePI\TestePI\bin\Debug\TestePI.pdb
+C:\Users\ucl\Downloads\TestePI\TestePI\obj\x86\Debug\TestePI.csprojResolveAssemblyReference.cache
+C:\Users\ucl\Downloads\TestePI\TestePI\obj\x86\Debug\TestePI.Login.resources
+C:\Users\ucl\Downloads\TestePI\TestePI\obj\x86\Debug\TestePI.Principal.resources
+C:\Users\ucl\Downloads\TestePI\TestePI\obj\x86\Debug\TestePI.Properties.Resources.resources
+C:\Users\ucl\Downloads\TestePI\TestePI\obj\x86\Debug\TestePI.csproj.GenerateResource.Cache
+C:\Users\ucl\Downloads\TestePI\TestePI\obj\x86\Debug\TestePI.TelaClientes.resources
