@@ -36,8 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbCep = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbEstado = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -110,7 +108,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(261, 25);
+            this.label2.Location = new System.Drawing.Point(22, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 29;
@@ -119,32 +117,15 @@
             // tbNome
             // 
             this.tbNome.Enabled = false;
-            this.tbNome.Location = new System.Drawing.Point(264, 41);
+            this.tbNome.Location = new System.Drawing.Point(25, 90);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(221, 20);
             this.tbNome.TabIndex = 30;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "CEP";
-            // 
-            // tbCep
-            // 
-            this.tbCep.Enabled = false;
-            this.tbCep.Location = new System.Drawing.Point(25, 90);
-            this.tbCep.Name = "tbCep";
-            this.tbCep.Size = new System.Drawing.Size(84, 20);
-            this.tbCep.TabIndex = 32;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(261, 74);
+            this.label4.Location = new System.Drawing.Point(261, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 33;
@@ -153,7 +134,7 @@
             // tbEstado
             // 
             this.tbEstado.Enabled = false;
-            this.tbEstado.Location = new System.Drawing.Point(264, 138);
+            this.tbEstado.Location = new System.Drawing.Point(264, 90);
             this.tbEstado.Name = "tbEstado";
             this.tbEstado.Size = new System.Drawing.Size(100, 20);
             this.tbEstado.TabIndex = 34;
@@ -178,7 +159,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(23, 171);
+            this.label6.Location = new System.Drawing.Point(22, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 37;
@@ -195,7 +176,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(261, 122);
+            this.label7.Location = new System.Drawing.Point(261, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 39;
@@ -204,7 +185,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(261, 171);
+            this.label8.Location = new System.Drawing.Point(261, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 41;
@@ -213,10 +194,10 @@
             // tbObservacao
             // 
             this.tbObservacao.Enabled = false;
-            this.tbObservacao.Location = new System.Drawing.Point(264, 187);
+            this.tbObservacao.Location = new System.Drawing.Point(264, 144);
             this.tbObservacao.Multiline = true;
             this.tbObservacao.Name = "tbObservacao";
-            this.tbObservacao.Size = new System.Drawing.Size(221, 63);
+            this.tbObservacao.Size = new System.Drawing.Size(273, 96);
             this.tbObservacao.TabIndex = 42;
             // 
             // pictureBox1
@@ -230,12 +211,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // cbBairro
             // 
             this.cbBairro.Enabled = false;
             this.cbBairro.FormattingEnabled = true;
-            this.cbBairro.Location = new System.Drawing.Point(264, 89);
+            this.cbBairro.Location = new System.Drawing.Point(264, 41);
             this.cbBairro.Name = "cbBairro";
             this.cbBairro.Size = new System.Drawing.Size(121, 21);
             this.cbBairro.TabIndex = 45;
@@ -256,8 +238,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbEstado);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbCep);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.tbNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -287,8 +267,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbNome;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbCep;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbEstado;
         private System.Windows.Forms.Label label5;

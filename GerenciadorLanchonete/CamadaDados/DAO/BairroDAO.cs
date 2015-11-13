@@ -11,10 +11,29 @@ namespace CamadaDados.DAO
 {
     public class BairroDAO
     {
-        //private static ConexaoOracle _conn = new ConexaoOracle();
-        public static void Buscar()
+        public static Bairros Buscar(int codigo)
         {
-            
+            Bairros bairro = null;
+            using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+            {
+                c.CommandType = System.Data.CommandType.Text;
+                c.CommandText = "SELECT bairroid, nome, valor FROM bairros WHERE bairroid = :codigo";
+                c.Parameters.Add("codigo", OracleType.Int32).Value = codigo;
+
+                using (OracleDataReader leitor = c.ExecuteReader())
+                {
+                    if (leitor.HasRows)
+                    {
+                        leitor.Read();
+                        int bd_bairroid = leitor.GetInt32(0);
+                        String bd_nome = leitor.GetString(1);
+                        float bd_valor = leitor.GetFloat(2);
+
+                        bairro = new Bairros(bd_bairroid, bd_nome, bd_valor);
+                    }
+                }
+            }
+            return bairro;
         }
 
         public static List<String> BuscaTodos()

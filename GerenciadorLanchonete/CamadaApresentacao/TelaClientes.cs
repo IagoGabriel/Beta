@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CamadaDados.DAO;
+using CamadaDados.Entidades;
 
 namespace CamadaApresentacao
 {
@@ -28,7 +29,6 @@ namespace CamadaApresentacao
         private void bCadastrar_Click(object sender, EventArgs e)
         {
             tbCodigo.Enabled = false;
-            tbCep.Enabled = true;
             tbEndereco.Enabled = true;
             tbTelefone.Enabled = true;
             tbNome.Enabled = true;
@@ -40,7 +40,6 @@ namespace CamadaApresentacao
         private void bAlterar_Click(object sender, EventArgs e)
         {
             tbCodigo.Enabled = false;
-            tbCep.Enabled = true;
             tbEndereco.Enabled = true;
             tbTelefone.Enabled = true;
             tbNome.Enabled = true;
@@ -52,7 +51,6 @@ namespace CamadaApresentacao
         private void bCancelar_Click(object sender, EventArgs e)
         {
             tbCodigo.Clear();
-            tbCep.Clear();
             tbEndereco.Clear();
             tbTelefone.Clear();
             tbNome.Clear();
@@ -60,13 +58,25 @@ namespace CamadaApresentacao
             tbEstado.Clear();
             tbObservacao.Clear();
             tbCodigo.Enabled = true;
-            tbCep.Enabled = false;
             tbEndereco.Enabled = false;
             tbTelefone.Enabled = false;
             tbNome.Enabled = false;
             cbBairro.Enabled = false;
             tbEstado.Enabled = false;
             tbObservacao.Enabled = false;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if(!(tbCodigo.Text.Equals(""))){
+                Clientes cliente = ClienteDAO.Buscar(int.Parse(tbCodigo.Text));
+                tbNome.Text = cliente.getNome();
+                tbEndereco.Text = cliente.getEndereco();
+                tbTelefone.Text= cliente.getNumero().ToString();
+                cbBairro.Text = BairroDAO.Buscar(cliente.getBairroId()).getNome();
+                tbEstado.Text = cliente.getEstado();
+                tbObservacao.Text = cliente.getObservacao();
+            }
         }
     }
 }

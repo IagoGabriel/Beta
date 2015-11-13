@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CamadaDados.Entidades
 {
-    class Bairros
+    public class Bairros
     {
         private int bairroId;
         private String nome;

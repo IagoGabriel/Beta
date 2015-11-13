@@ -8,7 +8,7 @@ using System.Data.OracleClient;
 
 namespace CamadaDados.DAO
 {
-    class ClienteDAO
+    public class ClienteDAO
     {
         public static Clientes Buscar(int codigo)
         {
@@ -16,8 +16,8 @@ namespace CamadaDados.DAO
             using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
             {
                 c.CommandType = System.Data.CommandType.Text;
-                c.CommandText = "SELECT c.clienteid, b.bairroid, c.nome, c.estado, c.endereco, c.numero, c.observacao FROM clientes c JOIN bairro b USING(bairroid) WHERE c.clienteid = :codigo";
-                c.Parameters.Add("@codigo", OracleType.Int32).Value = codigo;
+                c.CommandText = "SELECT clienteid, bairroid, nome, estado, endereco, numero, observacao FROM clientes WHERE clienteid = :codigo";
+                c.Parameters.Add("codigo", OracleType.Int32).Value = codigo;
 
                 using (OracleDataReader leitor = c.ExecuteReader())
                 {
