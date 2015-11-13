@@ -1,0 +1,7 @@
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaDados\obj\Debug\CamadaDados.csprojResolveAssemblyReference.cache
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaDados\bin\Debug\CamadaDados.dll.config
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaDados\bin\Debug\CamadaDados.dll
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaDados\bin\Debug\CamadaDados.pdb
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaDados\bin\Debug\Oracle.DataAccess.dll
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaDados\obj\Debug\CamadaDados.dll
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaDados\obj\Debug\CamadaDados.pdb

@@ -1,0 +1,14 @@
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaApresentacao.exe.config
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.csprojResolveAssemblyReference.cache
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.Login.resources
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.Properties.Resources.resources
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.csproj.GenerateResource.Cache
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaApresentacao.exe
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaApresentacao.pdb
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.exe
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.pdb
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.Principal.resources
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaClientes.resources
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaDados.dll
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\Oracle.DataAccess.dll
+C:\Users\IAGO\Documents\Visual Studio 2013\Projects\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaDados.pdb
