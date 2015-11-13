@@ -38,5 +38,25 @@ namespace CamadaDados.DAO
             }
             return cliente;
         }
+
+        public static bool Alterar(Clientes cliente)
+        {
+            using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+            {
+                c.CommandType = System.Data.CommandType.Text;
+                c.CommandText = "UPDATE clientes SET bairroid=:bairroid, nome=:nome, estado=:estado, endereco=:endereco, numero=:numero, observacao=:observacao WHERE clienteid = :codigo";
+                c.Parameters.Add("bairroid", OracleType.Int32).Value = cliente.getBairroId();
+                c.Parameters.Add("nome", OracleType.VarChar).Value = cliente.getNome();
+                c.Parameters.Add("estado", OracleType.VarChar).Value = cliente.getEstado();
+                c.Parameters.Add("endereco", OracleType.VarChar).Value = cliente.getEndereco();
+                c.Parameters.Add("numero", OracleType.VarChar).Value = cliente.getNumero();
+                c.Parameters.Add("observacao", OracleType.VarChar).Value = cliente.getObservacao();
+                c.Parameters.Add("codigo", OracleType.Int32).Value = cliente.getClienteId();
+
+                c.ExecuteNonQuery();
+                return true;
+            }
+        }
+
     }
 }

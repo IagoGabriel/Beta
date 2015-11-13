@@ -45,9 +45,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tbObservacao = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbLupa = new System.Windows.Forms.PictureBox();
             this.cbBairro = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLupa)).BeginInit();
             this.SuspendLayout();
             // 
             // bCadastrar
@@ -88,6 +88,7 @@
             this.bEfetivar.TabIndex = 26;
             this.bEfetivar.Text = "Efetivar";
             this.bEfetivar.UseVisualStyleBackColor = true;
+            this.bEfetivar.Click += new System.EventHandler(this.bEfetivar_Click);
             // 
             // tbCodigo
             // 
@@ -200,18 +201,18 @@
             this.tbObservacao.Size = new System.Drawing.Size(273, 96);
             this.tbObservacao.TabIndex = 42;
             // 
-            // pictureBox1
+            // pbLupa
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::CamadaApresentacao.Properties.Resources.lupa;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(95, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 19);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 43;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pbLupa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbLupa.Image = global::CamadaApresentacao.Properties.Resources.lupa;
+            this.pbLupa.InitialImage = null;
+            this.pbLupa.Location = new System.Drawing.Point(95, 42);
+            this.pbLupa.Name = "pbLupa";
+            this.pbLupa.Size = new System.Drawing.Size(20, 19);
+            this.pbLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbLupa.TabIndex = 43;
+            this.pbLupa.TabStop = false;
+            this.pbLupa.Click += new System.EventHandler(this.pbLupa_Click);
             // 
             // cbBairro
             // 
@@ -228,7 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 332);
             this.Controls.Add(this.cbBairro);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbLupa);
             this.Controls.Add(this.tbObservacao);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -251,7 +252,7 @@
             this.Name = "TelaClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaClientes";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLupa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,7 +277,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbObservacao;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbLupa;
         private System.Windows.Forms.ComboBox cbBairro;
     }
 }

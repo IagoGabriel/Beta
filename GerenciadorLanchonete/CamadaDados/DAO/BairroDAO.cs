@@ -36,6 +36,27 @@ namespace CamadaDados.DAO
             return bairro;
         }
 
+        public static int BuscaNome(String nome)
+        {
+            int bd_bairroid = 0;
+            using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+            {
+                c.CommandType = System.Data.CommandType.Text;
+                c.CommandText = "SELECT bairroid FROM bairros WHERE nome = :nome";
+                c.Parameters.Add("nome", OracleType.VarChar).Value = nome;
+
+                using (OracleDataReader leitor = c.ExecuteReader())
+                {
+                    if (leitor.HasRows)
+                    {
+                        leitor.Read();
+                        bd_bairroid = leitor.GetInt32(0);
+                    }
+                }
+            }
+            return bd_bairroid;
+        }
+
         public static List<String> BuscaTodos()
         {
             List<String> bairros = new List<String>();

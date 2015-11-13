@@ -14,6 +14,8 @@ namespace CamadaApresentacao
 {
     public partial class TelaClientes : Form
     {
+        int botao = 0;
+
         public TelaClientes()
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace CamadaApresentacao
             cbBairro.Enabled = true;
             tbEstado.Enabled = true;
             tbObservacao.Enabled = true;
+            botao = 1;
         }
 
         private void bAlterar_Click(object sender, EventArgs e)
@@ -46,6 +49,7 @@ namespace CamadaApresentacao
             cbBairro.Enabled = true;
             tbEstado.Enabled = true;
             tbObservacao.Enabled = true;
+            botao = 2;
         }
 
         private void bCancelar_Click(object sender, EventArgs e)
@@ -66,7 +70,7 @@ namespace CamadaApresentacao
             tbObservacao.Enabled = false;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pbLupa_Click(object sender, EventArgs e)
         {
             if(!(tbCodigo.Text.Equals(""))){
                 Clientes cliente = ClienteDAO.Buscar(int.Parse(tbCodigo.Text));
@@ -76,6 +80,25 @@ namespace CamadaApresentacao
                 cbBairro.Text = BairroDAO.Buscar(cliente.getBairroId()).getNome();
                 tbEstado.Text = cliente.getEstado();
                 tbObservacao.Text = cliente.getObservacao();
+            }
+        }
+
+        private void bEfetivar_Click(object sender, EventArgs e)
+        {
+            if(botao == 2){
+                if (tbCodigo.Text.Equals("") || tbNome.Text.Equals("") || tbEndereco.Text.Equals("") || tbTelefone.Text.Equals("") || tbCodigo.Text.Equals("") || cbBairro.Text.Equals("") || tbEstado.Text.Equals("") || tbCodigo.Text.Equals(""))
+                {
+                    MessageBox.Show("Preencha todos os campos obrigatórios.");
+                }
+                else
+                {
+                    Clientes cliente = new Clientes(int.Parse(tbCodigo.Text), tbNome.Text, BairroDAO.BuscaNome(cbBairro.Text), int.Parse(tbTelefone.Text), tbEndereco.Text, tbEstado.Text, tbObservacao.Text);
+                    if (ClienteDAO.Alterar(cliente))
+                    {
+                        MessageBox.Show("Cliente " + cliente.getNome() + " foi alterado com sucesso!");
+                        bCancelar_Click(sender, e);
+                    }
+                }
             }
         }
     }
