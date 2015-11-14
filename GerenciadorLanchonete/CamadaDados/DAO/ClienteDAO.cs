@@ -31,7 +31,7 @@ namespace CamadaDados.DAO
                             String bd_cliente = leitor.GetString(2);
                             String bd_estado = leitor.GetString(3);
                             String bd_endereco = leitor.GetString(4);
-                            int bd_numero = leitor.GetInt32(5);
+                            String bd_numero = leitor.GetString(5);
                             String bd_observacao = leitor.GetString(6);
 							int bd_ativo = leitor.GetInt32(7);
 
@@ -47,7 +47,7 @@ namespace CamadaDados.DAO
             }
         }
 
-		public static Clientes BuscaTelefone(int telefone)
+		public static Clientes BuscaTelefone(String telefone)
 		{
 			Clientes cliente = null;
 			try
@@ -68,7 +68,7 @@ namespace CamadaDados.DAO
 							String bd_cliente = leitor.GetString(2);
 							String bd_estado = leitor.GetString(3);
 							String bd_endereco = leitor.GetString(4);
-							int bd_numero = leitor.GetInt32(5);
+							String bd_numero = leitor.GetString(5);
 							String bd_observacao = leitor.GetString(6);
 							int bd_ativo = leitor.GetInt32(7);
 

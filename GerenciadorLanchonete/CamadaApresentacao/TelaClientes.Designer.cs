@@ -41,7 +41,6 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.tbEndereco = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.tbTelefone = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.tbObservacao = new System.Windows.Forms.TextBox();
@@ -49,6 +48,10 @@
 			this.cbBairro = new System.Windows.Forms.ComboBox();
 			this.cbAtivo = new System.Windows.Forms.CheckBox();
 			this.pbLupaTelefone = new System.Windows.Forms.PictureBox();
+			this.rdResidencial = new System.Windows.Forms.RadioButton();
+			this.rdCelular = new System.Windows.Forms.RadioButton();
+			this.mtbResidencial = new System.Windows.Forms.MaskedTextBox();
+			this.mtbCelular = new System.Windows.Forms.MaskedTextBox();
 			((System.ComponentModel.ISupportInitialize)(this.pbLupaCodigo)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pbLupaTelefone)).BeginInit();
 			this.SuspendLayout();
@@ -169,18 +172,6 @@
 			this.label6.TabIndex = 37;
 			this.label6.Text = "Telefone";
 			// 
-			// tbTelefone
-			// 
-			this.tbTelefone.ForeColor = System.Drawing.Color.Silver;
-			this.tbTelefone.Location = new System.Drawing.Point(25, 187);
-			this.tbTelefone.Name = "tbTelefone";
-			this.tbTelefone.Size = new System.Drawing.Size(100, 20);
-			this.tbTelefone.TabIndex = 38;
-			this.tbTelefone.Text = "(27)99999-9999";
-			this.tbTelefone.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			this.tbTelefone.Click += new System.EventHandler(this.tbTelefone_Click);
-			this.tbTelefone.TextChanged += new System.EventHandler(this.tbTelefone_TextChanged);
-			// 
 			// label7
 			// 
 			this.label7.AutoSize = true;
@@ -234,7 +225,7 @@
 			// 
 			this.cbAtivo.AutoSize = true;
 			this.cbAtivo.Enabled = false;
-			this.cbAtivo.Location = new System.Drawing.Point(25, 222);
+			this.cbAtivo.Location = new System.Drawing.Point(25, 261);
 			this.cbAtivo.Name = "cbAtivo";
 			this.cbAtivo.Size = new System.Drawing.Size(50, 17);
 			this.cbAtivo.TabIndex = 46;
@@ -246,7 +237,7 @@
 			// 
 			this.pbLupaTelefone.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pbLupaTelefone.Image = global::CamadaApresentacao.Properties.Resources.lupa1;
-			this.pbLupaTelefone.Location = new System.Drawing.Point(131, 188);
+			this.pbLupaTelefone.Location = new System.Drawing.Point(131, 221);
 			this.pbLupaTelefone.Name = "pbLupaTelefone";
 			this.pbLupaTelefone.Size = new System.Drawing.Size(20, 19);
 			this.pbLupaTelefone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -254,11 +245,59 @@
 			this.pbLupaTelefone.TabStop = false;
 			this.pbLupaTelefone.Click += new System.EventHandler(this.pbLupaTelefone_Click);
 			// 
+			// rdResidencial
+			// 
+			this.rdResidencial.AutoSize = true;
+			this.rdResidencial.Location = new System.Drawing.Point(25, 187);
+			this.rdResidencial.Name = "rdResidencial";
+			this.rdResidencial.Size = new System.Drawing.Size(80, 17);
+			this.rdResidencial.TabIndex = 48;
+			this.rdResidencial.TabStop = true;
+			this.rdResidencial.Text = "Residencial";
+			this.rdResidencial.UseVisualStyleBackColor = true;
+			this.rdResidencial.CheckedChanged += new System.EventHandler(this.rdResidencial_CheckedChanged);
+			// 
+			// rdCelular
+			// 
+			this.rdCelular.AutoSize = true;
+			this.rdCelular.Location = new System.Drawing.Point(111, 187);
+			this.rdCelular.Name = "rdCelular";
+			this.rdCelular.Size = new System.Drawing.Size(57, 17);
+			this.rdCelular.TabIndex = 49;
+			this.rdCelular.TabStop = true;
+			this.rdCelular.Text = "Celular";
+			this.rdCelular.UseVisualStyleBackColor = true;
+			this.rdCelular.CheckedChanged += new System.EventHandler(this.rdCelular_CheckedChanged);
+			// 
+			// mtbResidencial
+			// 
+			this.mtbResidencial.Enabled = false;
+			this.mtbResidencial.Location = new System.Drawing.Point(25, 209);
+			this.mtbResidencial.Mask = "(##) ####-####";
+			this.mtbResidencial.Name = "mtbResidencial";
+			this.mtbResidencial.Size = new System.Drawing.Size(100, 20);
+			this.mtbResidencial.TabIndex = 50;
+			this.mtbResidencial.Click += new System.EventHandler(this.mtbResidencial_Click);
+			// 
+			// mtbCelular
+			// 
+			this.mtbCelular.Enabled = false;
+			this.mtbCelular.Location = new System.Drawing.Point(25, 235);
+			this.mtbCelular.Mask = "(##) #####-####";
+			this.mtbCelular.Name = "mtbCelular";
+			this.mtbCelular.Size = new System.Drawing.Size(100, 20);
+			this.mtbCelular.TabIndex = 51;
+			this.mtbCelular.Click += new System.EventHandler(this.mtbCelular_Click);
+			// 
 			// TelaClientes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(534, 332);
+			this.Controls.Add(this.mtbCelular);
+			this.Controls.Add(this.mtbResidencial);
+			this.Controls.Add(this.rdCelular);
+			this.Controls.Add(this.rdResidencial);
 			this.Controls.Add(this.pbLupaTelefone);
 			this.Controls.Add(this.cbAtivo);
 			this.Controls.Add(this.cbBairro);
@@ -266,7 +305,6 @@
 			this.Controls.Add(this.tbObservacao);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.label7);
-			this.Controls.Add(this.tbTelefone);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.tbEndereco);
 			this.Controls.Add(this.label5);
@@ -280,6 +318,7 @@
 			this.Controls.Add(this.bCancelar);
 			this.Controls.Add(this.bAlterar);
 			this.Controls.Add(this.bCadastrar);
+			this.MaximizeBox = false;
 			this.MaximumSize = new System.Drawing.Size(550, 370);
 			this.MinimumSize = new System.Drawing.Size(550, 370);
 			this.Name = "TelaClientes";
@@ -307,7 +346,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbEndereco;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tbTelefone;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbObservacao;
@@ -315,5 +353,9 @@
         private System.Windows.Forms.ComboBox cbBairro;
 		private System.Windows.Forms.CheckBox cbAtivo;
 		private System.Windows.Forms.PictureBox pbLupaTelefone;
+		private System.Windows.Forms.RadioButton rdResidencial;
+		private System.Windows.Forms.RadioButton rdCelular;
+		private System.Windows.Forms.MaskedTextBox mtbResidencial;
+		private System.Windows.Forms.MaskedTextBox mtbCelular;
 	}
 }

@@ -11,7 +11,7 @@ namespace CamadaDados.Entidades
         private int clienteId;
         private String nome;
         private int bairroId;
-        private int numero;
+        private String numero;
         private String endereco;
         private String estado;
         private String observacao;
@@ -22,14 +22,14 @@ namespace CamadaDados.Entidades
             this.clienteId = 0;
             this.nome = "";
             this.bairroId = 0;
-            this.numero = 0;
+            this.numero = "";
             this.endereco = "";
             this.estado = "";
             this.observacao = "";
 			this.ativo = 1;
         }
 
-        public Clientes(int clienteId, String nome, int bairroId, int numero, String endereco, String estado, String observacao, int ativo)
+        public Clientes(int clienteId, String nome, int bairroId, String numero, String endereco, String estado, String observacao, int ativo)
         {
             this.clienteId = clienteId;
             this.nome = nome;
@@ -71,12 +71,12 @@ namespace CamadaDados.Entidades
             this.bairroId = bairroId;
         }
 
-        public int getNumero()
+        public String getNumero()
         {
             return this.numero;
         }
 
-        public void setNumero(int numero)
+        public void setNumero(String numero)
         {
             this.numero = numero;
         }
