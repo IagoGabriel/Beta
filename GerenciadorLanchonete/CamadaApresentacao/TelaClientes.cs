@@ -72,14 +72,20 @@ namespace CamadaApresentacao
 
         private void pbLupa_Click(object sender, EventArgs e)
         {
-            if(!(tbCodigo.Text.Equals(""))){
-                Clientes cliente = ClienteDAO.Buscar(int.Parse(tbCodigo.Text));
-                tbNome.Text = cliente.getNome();
-                tbEndereco.Text = cliente.getEndereco();
-                tbTelefone.Text= cliente.getNumero().ToString();
-                cbBairro.Text = BairroDAO.Buscar(cliente.getBairroId()).getNome();
-                tbEstado.Text = cliente.getEstado();
-                tbObservacao.Text = cliente.getObservacao();
+            try
+            {
+                if (!(tbCodigo.Text.Equals("")))
+                {
+                    Clientes cliente = ClienteDAO.Buscar(int.Parse(tbCodigo.Text));
+                    tbNome.Text = cliente.getNome();
+                    tbEndereco.Text = cliente.getEndereco();
+                    tbTelefone.Text = cliente.getNumero().ToString();
+                    cbBairro.Text = BairroDAO.Buscar(cliente.getBairroId()).getNome();
+                    tbEstado.Text = cliente.getEstado();
+                    tbObservacao.Text = cliente.getObservacao();
+                }
+            }catch(Exception ex){
+                MessageBox.Show(ex.Message + "\nCliente com o este código não encontrado.");
             }
         }
 

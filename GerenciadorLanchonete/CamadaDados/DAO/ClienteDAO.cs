@@ -13,30 +13,37 @@ namespace CamadaDados.DAO
         public static Clientes Buscar(int codigo)
         {
             Clientes cliente = null;
-            using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+            try
             {
-                c.CommandType = System.Data.CommandType.Text;
-                c.CommandText = "SELECT clienteid, bairroid, nome, estado, endereco, numero, observacao FROM clientes WHERE clienteid = :codigo";
-                c.Parameters.Add("codigo", OracleType.Int32).Value = codigo;
-
-                using (OracleDataReader leitor = c.ExecuteReader())
+                using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
                 {
-                    if (leitor.HasRows)
-                    {
-                        leitor.Read();
-                        int bd_clienteid = leitor.GetInt32(0);
-                        int bd_bairroid = leitor.GetInt32(1);
-                        String bd_cliente = leitor.GetString(2);
-                        String bd_estado = leitor.GetString(3);
-                        String bd_endereco = leitor.GetString(4);
-                        int bd_numero = leitor.GetInt32(5);
-                        String bd_observacao = leitor.GetString(6);
+                    c.CommandType = System.Data.CommandType.Text;
+                    c.CommandText = "SELECT clienteid, bairroid, nome, estado, endereco, numero, observacao FROM clientes WHERE clienteid = :codigo";
+                    c.Parameters.Add("codigo", OracleType.Int32).Value = codigo;
 
-                        cliente = new Clientes(bd_clienteid, bd_cliente, bd_bairroid, bd_numero, bd_endereco, bd_estado, bd_observacao);
+                    using (OracleDataReader leitor = c.ExecuteReader())
+                    {
+                        if (leitor.HasRows)
+                        {
+                            leitor.Read();
+                            int bd_clienteid = leitor.GetInt32(0);
+                            int bd_bairroid = leitor.GetInt32(1);
+                            String bd_cliente = leitor.GetString(2);
+                            String bd_estado = leitor.GetString(3);
+                            String bd_endereco = leitor.GetString(4);
+                            int bd_numero = leitor.GetInt32(5);
+                            String bd_observacao = leitor.GetString(6);
+
+                            cliente = new Clientes(bd_clienteid, bd_cliente, bd_bairroid, bd_numero, bd_endereco, bd_estado, bd_observacao);
+                        }
                     }
                 }
+                return cliente;
             }
-            return cliente;
+            catch (NullReferenceException e)
+            {
+                throw e;
+            }
         }
 
         public static bool Alterar(Clientes cliente)
