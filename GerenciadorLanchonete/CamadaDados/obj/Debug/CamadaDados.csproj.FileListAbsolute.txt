@@ -12,3 +12,11 @@ C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\Cama
 C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\CamadaDados.dll
 C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\CamadaDados.pdb
 C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\CamadaDados.dll.config
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\CamadaDados.dll
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\CamadaDados.pdb
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\obj\Debug\CamadaDados.csprojResolveAssemblyReference.cache
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\obj\Debug\CamadaDados.dll
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\obj\Debug\CamadaDados.pdb

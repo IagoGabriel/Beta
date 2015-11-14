@@ -26,3 +26,17 @@ C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Deb
 C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaDados.dll
 C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\Oracle.DataAccess.dll
 C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaDados.pdb
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaApresentacao.exe.config
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.exe
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.pdb
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaApresentacao.exe
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaApresentacao.pdb
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaDados.dll
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaDados.pdb
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.csprojResolveAssemblyReference.cache
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.Login.resources
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.Principal.resources
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.Properties.Resources.resources
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaClientes.resources
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.csproj.GenerateResource.Cache
