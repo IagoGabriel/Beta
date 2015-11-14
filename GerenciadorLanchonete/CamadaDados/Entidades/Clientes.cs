@@ -41,6 +41,17 @@ namespace CamadaDados.Entidades
 			this.ativo = ativo;
         }
 
+        public Clientes(String nome, int bairroId, String numero, String endereco, String estado, String observacao, int ativo)
+        {
+            this.nome = nome;
+            this.bairroId = bairroId;
+            this.numero = numero;
+            this.endereco = endereco;
+            this.estado = estado;
+            this.observacao = observacao;
+            this.ativo = ativo;
+        }
+
         public int getClienteId()
         {
             return this.clienteId;

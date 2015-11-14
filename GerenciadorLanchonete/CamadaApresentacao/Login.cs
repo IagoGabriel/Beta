@@ -107,6 +107,11 @@ namespace CamadaApresentacao
             hora.Text = (DateTime.Now.ToString("HH:mm:ss"));
         }
 
+        private void tbUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

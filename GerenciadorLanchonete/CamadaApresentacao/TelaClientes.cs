@@ -19,7 +19,7 @@ namespace CamadaApresentacao
         public TelaClientes()
         {
             InitializeComponent();
-
+            tbCodigo.Select();
             List<String> bairros = BairroDAO.BuscaTodos();
 
             for (int i = 0; i < bairros.Count(); i++)
@@ -38,6 +38,8 @@ namespace CamadaApresentacao
             tbObservacao.Enabled = true;
             botao = 1;
 			cbAtivo.Enabled = true;
+            rdCelular.Enabled = true;
+            rdResidencial.Enabled = true;
 		}
 
         private void bAlterar_Click(object sender, EventArgs e)
@@ -56,24 +58,36 @@ namespace CamadaApresentacao
 			if (mtbCelular.Visible==true)
 			{
 				mtbCelular.Enabled = true;
+                rdCelular.Checked = true;
 			}
 			else
 			{
 				if (mtbResidencial.Visible == true)
 				{
 					mtbResidencial.Enabled = true;
+                    rdResidencial.Checked = true;
 				}
             }
         }
 
         private void bCancelar_Click(object sender, EventArgs e)
         {
+            tbCodigo.Select();
+            rdCelular.Checked = false;
+            rdResidencial.Checked = false;
+            rdCelular.Enabled = true;
+            rdResidencial.Enabled = true;
+            mtbCelular.Enabled = false;
+            mtbResidencial.Enabled = false;
+
             tbCodigo.Clear();
             tbEndereco.Clear();
             tbNome.Clear();
             cbBairro.Text = "";
             tbEstado.Clear();
             tbObservacao.Clear();
+            mtbCelular.Clear();
+            mtbResidencial.Clear();
             tbCodigo.Enabled = true;
             tbEndereco.Enabled = false;
             tbNome.Enabled = false;
@@ -82,12 +96,6 @@ namespace CamadaApresentacao
             tbObservacao.Enabled = false;
 			cbAtivo.Enabled = false;
 			cbAtivo.Checked = false;
-			mtbCelular.Enabled = false;
-			mtbResidencial.Enabled = false;
-			rdCelular.Checked = false;
-			rdResidencial.Checked = false;
-			rdCelular.Enabled = false;
-			rdResidencial.Enabled = false;
 
 		}
 
@@ -106,6 +114,7 @@ namespace CamadaApresentacao
 
 					if (cliente.getNumero().Length==14)
 					{
+                        rdResidencial.Checked = true;
 						mtbResidencial.Text = cliente.getNumero();
 						mtbCelular.Visible = false;
 						mtbResidencial.Visible = true;
@@ -115,6 +124,7 @@ namespace CamadaApresentacao
 					{
 						if (cliente.getNumero().Length == 15)
 						{
+                            rdCelular.Checked = true;
 							mtbCelular.Text = cliente.getNumero();
 							mtbResidencial.Visible = false;
 							mtbCelular.Visible = true;
@@ -135,11 +145,30 @@ namespace CamadaApresentacao
 					}
 					else
 					{
-						cbAtivo.Checked =false;
+						cbAtivo.Checked = false;
 					}
-					
-				}
+
+                    if (mtbCelular.Visible == true)
+                    {
+                        rdCelular.Checked = true;
+                        mtbCelular.Enabled = false;
+                    }
+                    else
+                    {
+                        if (mtbResidencial.Visible == true)
+                        {
+                            rdResidencial.Checked = true;
+                            mtbResidencial.Enabled = false;
+                        }
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Preencha o código que deseja buscar!");
+                }
             }catch(Exception ex){
+                bCancelar_Click(sender, e);
                 MessageBox.Show("Não existe cliente com esse código!");
             }
         }
@@ -161,10 +190,39 @@ namespace CamadaApresentacao
 				}
 			}
 
-            if(botao == 2){
-                if (tbCodigo.Text.Equals("") || tbNome.Text.Equals("") || tbEndereco.Text.Equals("") || tbCodigo.Text.Equals("") || cbBairro.Text.Equals("") || tbEstado.Text.Equals("") || tbCodigo.Text.Equals(""))
+            if (botao == 1)
+            {
+                if (tbNome.Text.Equals("") || tbEndereco.Text.Equals("") || (mtbResidencial.Text.Equals("") && mtbCelular.Text.Equals("")) || cbBairro.Text.Equals("") || tbEstado.Text.Equals(""))
                 {
-                    MessageBox.Show("Preencha todos os campos obrigatórios.");
+                    MessageBox.Show("Preencha todos os campos obrigatórios: *");
+                }
+                else
+                {
+                    if (cbAtivo.Checked)
+                    {
+                        checkAtivo = 1;
+                    }
+                    else
+                    {
+                        checkAtivo = 0;
+                    }
+                    if (tbObservacao.Text == "")
+                    {
+                        tbObservacao.Text = " ";
+                    }
+                    Clientes cliente = new Clientes(tbNome.Text, BairroDAO.BuscaNome(cbBairro.Text), numero, tbEndereco.Text, tbEstado.Text, tbObservacao.Text, checkAtivo);
+                    if (ClienteDAO.Inserir(cliente))
+                    {
+                        bCancelar_Click(sender, e);
+                        MessageBox.Show("Cliente " + cliente.getNome() + " foi cadastrado com sucesso!");
+                    }
+                }
+            }
+
+            if(botao == 2){
+                if (tbCodigo.Text.Equals("") || tbNome.Text.Equals("") || tbEndereco.Text.Equals("") || (mtbResidencial.Text.Equals("") && mtbCelular.Text.Equals("")) || cbBairro.Text.Equals("") || tbEstado.Text.Equals(""))
+                {
+                    MessageBox.Show("Preencha todos os campos obrigatórios: *");
                 }
                 else
                 {
@@ -175,11 +233,15 @@ namespace CamadaApresentacao
 					{
 						checkAtivo = 0;
 					}
+                    if (tbObservacao.Text == "")
+                    {
+                        tbObservacao.Text = " ";
+                    }
                     Clientes cliente = new Clientes(int.Parse(tbCodigo.Text), tbNome.Text, BairroDAO.BuscaNome(cbBairro.Text), numero, tbEndereco.Text, tbEstado.Text, tbObservacao.Text, checkAtivo);
                     if (ClienteDAO.Alterar(cliente))
                     {
-                        MessageBox.Show("Cliente " + cliente.getNome() + " foi alterado com sucesso!");
                         bCancelar_Click(sender, e);
+                        MessageBox.Show("Cliente " + cliente.getNome() + " foi alterado com sucesso!");
                     }
                 }
             }
@@ -189,9 +251,10 @@ namespace CamadaApresentacao
 
 		private void pbLupaTelefone_Click(object sender, EventArgs e){
 			try {
+                tbCodigo.Enabled = false;
 				if (rdResidencial.Checked)
 				{
-					if (!(rdResidencial.Text.Equals("(__)____-____")))
+                    if (!(mtbResidencial.Text.Equals("(  )     -")))
 					{
 						Clientes cliente = ClienteDAO.BuscaTelefone(mtbResidencial.Text);
 						tbCodigo.Text = cliente.getClienteId().ToString();
@@ -211,13 +274,17 @@ namespace CamadaApresentacao
 						{
 							cbAtivo.Checked = false;
 						}
-					}
+                    }
+                    else
+                    {
+                        MessageBox.Show("Preencha o campo do telefone: *");
+                    }
 				}
 				else
 				{
 					if (rdCelular.Checked)
 					{
-						if (!(rdCelular.Text.Equals("(__)_____-____")))
+                        if (!(mtbCelular.Text.Equals("(  )      -")))
 						{
 							Clientes cliente = ClienteDAO.BuscaTelefone(mtbCelular.Text);
 							tbCodigo.Text = cliente.getClienteId().ToString();
@@ -237,8 +304,16 @@ namespace CamadaApresentacao
 							{
 								cbAtivo.Checked = false;
 							}
-						}
-					}
+                        }
+                        else
+                        {
+                            MessageBox.Show("Preencha o campo do telefone: *");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione o tipo de telefone: Residencial ou Celular.");
+                    }
 				}
 			}
 			catch (Exception ex)
@@ -272,5 +347,30 @@ namespace CamadaApresentacao
 		{
 			mtbResidencial.SelectionStart = 1;
 		}
+
+        private void tbCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                pbLupaCodigo_Click(sender, e);
+            }
+        }
+
+        private void mtbCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                pbLupaTelefone_Click(sender, e);
+            }
+        }
+
+        private void mtbResidencial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                pbLupaTelefone_Click(sender, e);
+            }
+        }
 	}
 }

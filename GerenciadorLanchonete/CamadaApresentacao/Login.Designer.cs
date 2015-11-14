@@ -122,6 +122,7 @@
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(150, 20);
             this.tbUsuario.TabIndex = 13;
+            this.tbUsuario.TextChanged += new System.EventHandler(this.tbUsuario_TextChanged);
             this.tbUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUsuario_KeyPress);
             // 
             // label2

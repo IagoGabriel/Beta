@@ -56,7 +56,7 @@ namespace CamadaDados.DAO
 				{
 					c.CommandType = System.Data.CommandType.Text;
 					c.CommandText = "SELECT clienteid, bairroid, nome, estado, endereco, numero, observacao, ativo FROM clientes WHERE numero = :numero";
-					c.Parameters.Add("numero", OracleType.Int32).Value = telefone;
+					c.Parameters.Add("numero", OracleType.VarChar).Value = telefone;
 
 					using (OracleDataReader leitor = c.ExecuteReader())
 					{
@@ -83,6 +83,24 @@ namespace CamadaDados.DAO
 				throw e;
 			}
 		}
+
+        public static bool Inserir(Clientes cliente)
+        {
+            using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+            {
+                c.CommandType = System.Data.CommandType.Text;
+                c.CommandText = "INSERT into CLIENTES values(CLIENTES_SEQ.NEXTVAL, :bairroid, :nome, :estado, :endereco, :numero, :observacao, :ativo)";
+                c.Parameters.Add("bairroid", OracleType.Int32).Value = cliente.getBairroId();
+                c.Parameters.Add("nome", OracleType.VarChar).Value = cliente.getNome();
+                c.Parameters.Add("estado", OracleType.VarChar).Value = cliente.getEstado();
+                c.Parameters.Add("endereco", OracleType.VarChar).Value = cliente.getEndereco();
+                c.Parameters.Add("numero", OracleType.VarChar).Value = cliente.getNumero();
+                c.Parameters.Add("observacao", OracleType.VarChar).Value = cliente.getObservacao();
+                c.Parameters.Add("ativo", OracleType.Int32).Value = cliente.getAtivo();
+                c.ExecuteNonQuery();
+                return true;
+            }
+        }
 
 		public static bool Alterar(Clientes cliente)
         {
