@@ -19,7 +19,7 @@ namespace CamadaApresentacao
 		public TelaFuncionarios()
 		{
 			InitializeComponent();
-			cbCargo.Select();
+			tbCodigo.Select();
 			List<String> cargos = CargoDAO.BuscaTodos();
 
 			for (int i = 0; i < cargos.Count(); i++)
@@ -45,13 +45,95 @@ namespace CamadaApresentacao
 
 		private void bEfetivar_Click(object sender, EventArgs e)
 		{
-			/*Certo*/
+            try
+            {
+                int checkAtivo;
+                String numero = "";
 
+                if (rdCelular.Checked)
+                {
+                    numero = mtbCelular.Text;
+                }
+                else
+                {
+                    if (rdResidencial.Checked)
+                    {
+                        numero = mtbResidencial.Text;
+                    }
+                }
+
+                if (botao == 1)
+                {
+                    if (tbNome.Text.Equals("") || tbEndereco.Text.Equals("") || (mtbResidencial.Text.Equals("") && mtbCelular.Text.Equals("")) || cbCargo.Text.Equals("") || tbEstado.Text.Equals("") || tbBairro.Text.Equals(""))
+                    {
+                        MessageBox.Show("Preencha todos os campos obrigatórios: *");
+                    }
+                    else
+                    {
+                        if (cbAtivo.Checked)
+                        {
+                            checkAtivo = 1;
+                        }
+                        else
+                        {
+                            checkAtivo = 0;
+                        }
+                        if (tbObservacao.Text == "")
+                        {
+                            tbObservacao.Text = " ";
+                        }
+                        Funcionarios funcionario = new Funcionarios(CargoDAO.BuscaNome(cbCargo.Text), tbNome.Text, tbBairro.Text, tbEstado.Text, tbEndereco.Text, numero, tbObservacao.Text, checkAtivo);
+                        if (FuncionarioDAO.Inserir(funcionario))
+                        {
+                            bCancelar_Click(sender, e);
+                            MessageBox.Show("Funcionário " + funcionario.getNome() + " foi cadastrado com sucesso!");
+                        }
+                    }
+                }
+
+                if (botao == 2)
+                {
+                    if (tbCodigo.Text.Equals("") || tbNome.Text.Equals("") || tbEndereco.Text.Equals("") || (mtbResidencial.Text.Equals("") && mtbCelular.Text.Equals("")) || cbCargo.Text.Equals("") || tbEstado.Text.Equals("") || tbBairro.Text.Equals(""))
+                    {
+                        MessageBox.Show("Preencha todos os campos obrigatórios: *");
+                    }
+                    else
+                    {
+                        if (cbAtivo.Checked)
+                        {
+                            checkAtivo = 1;
+                        }
+                        else
+                        {
+                            checkAtivo = 0;
+                        }
+                        if (tbObservacao.Text == "")
+                        {
+                            tbObservacao.Text = " ";
+                        }
+                        Funcionarios funcionario = new Funcionarios(int.Parse(tbCodigo.Text), CargoDAO.BuscaNome(cbCargo.Text), tbNome.Text, tbBairro.Text, tbEstado.Text, tbEndereco.Text, numero, tbObservacao.Text, checkAtivo);
+
+                        if (FuncionarioDAO.Alterar(funcionario))
+                        {
+                            bCancelar_Click(sender, e);
+                            MessageBox.Show("Funcionário " + funcionario.getNome() + " foi alterado com sucesso!");
+                        }
+                    }
+                }
+            }catch(Exception ex){
+                if (ex.Message.Contains("UniqueConstraint"))
+                {
+                    MessageBox.Show("Um valor único não foi informado.");
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um erro, contate o administrador do sistema.");
+                }
+            }
 		}
 		private void bCancelar_Click(object sender, EventArgs e)
 		{
 			tbCodigo.Select();
-			cbCargo.Enabled = false;
 			rdCelular.Checked = false;
 			rdResidencial.Checked = false;
 			rdCelular.Enabled = true;
@@ -62,9 +144,10 @@ namespace CamadaApresentacao
 			tbCodigo.Clear();
 			tbEndereco.Clear();
 			tbNome.Clear();
-			tbBairro.Text = "";
+			tbBairro.Clear();
 			tbEstado.Clear();
 			tbObservacao.Clear();
+            cbCargo.Text = "";
 			mtbCelular.Clear();
 			mtbResidencial.Clear();
 			tbCodigo.Enabled = true;
@@ -195,6 +278,13 @@ namespace CamadaApresentacao
             mtbCelular.Visible = false;
             mtbResidencial.Enabled = true;
             mtbResidencial.Visible = true;
+
+            if ((!tbCodigo.Enabled) && botao != 1)
+            {
+                bCancelar_Click(sender, e);
+                rdResidencial.Checked = true;
+            }
+
         }
 
         private void rdCelular_CheckedChanged(object sender, EventArgs e)
@@ -203,6 +293,124 @@ namespace CamadaApresentacao
             mtbResidencial.Visible = false;
             mtbResidencial.Enabled = false;
             mtbCelular.Visible = true;
+
+            if ((!tbCodigo.Enabled) && botao != 1)
+            {
+                bCancelar_Click(sender, e);
+                rdCelular.Checked = true;
+            }
+
+        }
+
+        private void pbLupaTelefone_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tbCodigo.Enabled = false;
+                if (rdResidencial.Checked)
+                {
+                    if (!(mtbResidencial.Text.Equals("(  )     -")))
+                    {
+                        Funcionarios funcionario = FuncionarioDAO.BuscaTelefone(mtbResidencial.Text);
+                        tbCodigo.Text = funcionario.getFuncionarioId().ToString();
+                        tbNome.Text = funcionario.getNome();
+                        tbEndereco.Text = funcionario.getEndereco();
+                        cbCargo.Text = CargoDAO.Buscar(funcionario.getCargoId()).getNome();
+                        tbEstado.Text = funcionario.getEstado();
+                        tbBairro.Text = funcionario.getBairro();
+                        tbObservacao.Text = funcionario.getObservacao();
+
+                        int checkAtivo = funcionario.getAtivo();
+
+                        if (checkAtivo == 1)
+                        {
+                            cbAtivo.Checked = true;
+                        }
+                        else
+                        {
+                            cbAtivo.Checked = false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Preencha o campo do telefone: *");
+                    }
+                }
+                else
+                {
+                    if (rdCelular.Checked)
+                    {
+                        if (!(mtbCelular.Text.Equals("(  )      -")))
+                        {
+                            Funcionarios funcionario = FuncionarioDAO.BuscaTelefone(mtbCelular.Text);
+                            tbCodigo.Text = funcionario.getFuncionarioId().ToString();
+                            tbNome.Text = funcionario.getNome();
+                            tbEndereco.Text = funcionario.getEndereco();
+                            cbCargo.Text = CargoDAO.Buscar(funcionario.getCargoId()).getNome();
+                            tbEstado.Text = funcionario.getEstado();
+                            tbObservacao.Text = funcionario.getObservacao();
+                            tbBairro.Text = funcionario.getBairro();
+
+                            int checkAtivo = funcionario.getAtivo();
+
+                            if (checkAtivo == 1)
+                            {
+                                cbAtivo.Checked = true;
+                            }
+                            else
+                            {
+                                cbAtivo.Checked = false;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Preencha o campo do telefone: *");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione o tipo de telefone: Residencial ou Celular.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não existe cliente com esse telefone!");
+            }
+        }
+
+        private void tbCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                pbLupaCodigo_Click(sender, e);
+            }
+        }
+
+        private void mtbResidencial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                pbLupaTelefone_Click(sender, e);
+            }
+        }
+
+        private void mtbCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                pbLupaTelefone_Click(sender, e);
+            }
+        }
+
+        private void mtbResidencial_Click(object sender, EventArgs e)
+        {
+            mtbResidencial.SelectionStart = 1;
+        }
+
+        private void mtbCelular_Click(object sender, EventArgs e)
+        {
+            mtbCelular.SelectionStart = 1;
         }
 	}
 }

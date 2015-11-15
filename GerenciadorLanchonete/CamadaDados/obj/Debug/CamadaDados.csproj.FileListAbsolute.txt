@@ -19,3 +19,4 @@ C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\Or
 C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\obj\Debug\CamadaDados.csprojResolveAssemblyReference.cache
 C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\obj\Debug\CamadaDados.dll
 C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\obj\Debug\CamadaDados.pdb
+C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaDados\bin\Debug\Oracle.DataAccess.dll

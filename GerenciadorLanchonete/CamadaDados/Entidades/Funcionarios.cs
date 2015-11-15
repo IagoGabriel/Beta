@@ -41,8 +41,22 @@ namespace CamadaDados.Entidades
 			this.endereco = endereco;
 			this.numero = numero;
 			this.numero = numero;
-			this.observacao = observacao;this
+			this.observacao = observacao;
+            this.ativo = ativo;
 		}
+
+        public Funcionarios(int cargoId, String nome, String bairro, String estado, String endereco, String numero, String observacao, int ativo)
+        {
+            this.cargoId = cargoId;
+            this.nome = nome;
+            this.bairro = bairro;
+            this.estado = estado;
+            this.endereco = endereco;
+            this.numero = numero;
+            this.numero = numero;
+            this.observacao = observacao;
+            this.ativo = ativo;
+        }
 
 		public int getFuncionarioId()
 		{

@@ -80,6 +80,7 @@
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.Size = new System.Drawing.Size(75, 20);
             this.tbCodigo.TabIndex = 1;
+            this.tbCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCodigo_KeyPress);
             // 
             // tbNome
             // 
@@ -211,6 +212,8 @@
             this.mtbResidencial.Name = "mtbResidencial";
             this.mtbResidencial.Size = new System.Drawing.Size(100, 20);
             this.mtbResidencial.TabIndex = 17;
+            this.mtbResidencial.Click += new System.EventHandler(this.mtbResidencial_Click);
+            this.mtbResidencial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbResidencial_KeyPress);
             // 
             // mtbCelular
             // 
@@ -220,6 +223,8 @@
             this.mtbCelular.Name = "mtbCelular";
             this.mtbCelular.Size = new System.Drawing.Size(100, 20);
             this.mtbCelular.TabIndex = 18;
+            this.mtbCelular.Click += new System.EventHandler(this.mtbCelular_Click);
+            this.mtbCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mtbCelular_KeyPress);
             // 
             // tbObservacao
             // 
@@ -294,6 +299,7 @@
             this.pbLupaTelefone.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLupaTelefone.TabIndex = 49;
             this.pbLupaTelefone.TabStop = false;
+            this.pbLupaTelefone.Click += new System.EventHandler(this.pbLupaTelefone_Click);
             // 
             // asterisco
             // 

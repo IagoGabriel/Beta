@@ -86,39 +86,51 @@ namespace CamadaDados.DAO
 
         public static bool Inserir(Clientes cliente)
         {
-            using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+            try
             {
-                c.CommandType = System.Data.CommandType.Text;
-                c.CommandText = "INSERT into CLIENTES values(CLIENTES_SEQ.NEXTVAL, :bairroid, :nome, :estado, :endereco, :numero, :observacao, :ativo)";
-                c.Parameters.Add("bairroid", OracleType.Int32).Value = cliente.getBairroId();
-                c.Parameters.Add("nome", OracleType.VarChar).Value = cliente.getNome();
-                c.Parameters.Add("estado", OracleType.VarChar).Value = cliente.getEstado();
-                c.Parameters.Add("endereco", OracleType.VarChar).Value = cliente.getEndereco();
-                c.Parameters.Add("numero", OracleType.VarChar).Value = cliente.getNumero();
-                c.Parameters.Add("observacao", OracleType.VarChar).Value = cliente.getObservacao();
-                c.Parameters.Add("ativo", OracleType.Int32).Value = cliente.getAtivo();
-                c.ExecuteNonQuery();
-                return true;
+                using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+                {
+                    c.CommandType = System.Data.CommandType.Text;
+                    c.CommandText = "INSERT into CLIENTES values(CLIENTES_SEQ.NEXTVAL, :bairroid, :nome, :estado, :endereco, :numero, :observacao, :ativo)";
+                    c.Parameters.Add("bairroid", OracleType.Int32).Value = cliente.getBairroId();
+                    c.Parameters.Add("nome", OracleType.VarChar).Value = cliente.getNome();
+                    c.Parameters.Add("estado", OracleType.VarChar).Value = cliente.getEstado();
+                    c.Parameters.Add("endereco", OracleType.VarChar).Value = cliente.getEndereco();
+                    c.Parameters.Add("numero", OracleType.VarChar).Value = cliente.getNumero();
+                    c.Parameters.Add("observacao", OracleType.VarChar).Value = cliente.getObservacao();
+                    c.Parameters.Add("ativo", OracleType.Int32).Value = cliente.getAtivo();
+                    c.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (OracleException e)
+            {
+                throw e;
             }
         }
 
 		public static bool Alterar(Clientes cliente)
         {
-            using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+            try
             {
-                c.CommandType = System.Data.CommandType.Text;
-                c.CommandText = "UPDATE clientes SET bairroid=:bairroid, nome=:nome, estado=:estado, endereco=:endereco, numero=:numero, observacao=:observacao, ativo=:ativo WHERE clienteid = :codigo";
-                c.Parameters.Add("bairroid", OracleType.Int32).Value = cliente.getBairroId();
-                c.Parameters.Add("nome", OracleType.VarChar).Value = cliente.getNome();
-                c.Parameters.Add("estado", OracleType.VarChar).Value = cliente.getEstado();
-                c.Parameters.Add("endereco", OracleType.VarChar).Value = cliente.getEndereco();
-                c.Parameters.Add("numero", OracleType.VarChar).Value = cliente.getNumero();
-                c.Parameters.Add("observacao", OracleType.VarChar).Value = cliente.getObservacao();
-                c.Parameters.Add("codigo", OracleType.Int32).Value = cliente.getClienteId();
-				c.Parameters.Add("ativo", OracleType.Int32).Value = cliente.getAtivo();
+                using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+                {
+                    c.CommandType = System.Data.CommandType.Text;
+                    c.CommandText = "UPDATE clientes SET bairroid=:bairroid, nome=:nome, estado=:estado, endereco=:endereco, numero=:numero, observacao=:observacao, ativo=:ativo WHERE clienteid = :codigo";
+                    c.Parameters.Add("bairroid", OracleType.Int32).Value = cliente.getBairroId();
+                    c.Parameters.Add("nome", OracleType.VarChar).Value = cliente.getNome();
+                    c.Parameters.Add("estado", OracleType.VarChar).Value = cliente.getEstado();
+                    c.Parameters.Add("endereco", OracleType.VarChar).Value = cliente.getEndereco();
+                    c.Parameters.Add("numero", OracleType.VarChar).Value = cliente.getNumero();
+                    c.Parameters.Add("observacao", OracleType.VarChar).Value = cliente.getObservacao();
+                    c.Parameters.Add("codigo", OracleType.Int32).Value = cliente.getClienteId();
+                    c.Parameters.Add("ativo", OracleType.Int32).Value = cliente.getAtivo();
 
-				c.ExecuteNonQuery();
-                return true;
+                    c.ExecuteNonQuery();
+                    return true;
+                }
+            }catch(OracleException e){
+                throw e;
             }
         }
 

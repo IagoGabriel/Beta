@@ -41,3 +41,4 @@ C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\D
 C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.csproj.GenerateResource.Cache
 C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaFuncionarios.resources
 C:\Users\Iago\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaFuncionarios.resources
+C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\Oracle.DataAccess.dll

@@ -88,42 +88,56 @@ namespace CamadaDados.DAO
 
 		public static bool Inserir(Funcionarios funcionario)
 		{
-			using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
-			{
-				c.CommandType = System.Data.CommandType.Text;
-				c.CommandText = "INSERT into FUNCIONARIOS values(FUNCIONARIOS_SEQ.NEXTVAL, :cargoid, :nome, :bairro, :estado, :endereco, :numero, :observacao, :ativo)";
-				c.Parameters.Add("cargoid", OracleType.Int32).Value = funcionario.getCargoId();
-				c.Parameters.Add("bairro", OracleType.VarChar).Value = funcionario.getBairro();
-				c.Parameters.Add("nome", OracleType.VarChar).Value = funcionario.getNome();
-				c.Parameters.Add("estado", OracleType.VarChar).Value = funcionario.getEstado();
-				c.Parameters.Add("endereco", OracleType.VarChar).Value = funcionario.getEndereco();
-				c.Parameters.Add("numero", OracleType.VarChar).Value = funcionario.getNumero();
-				c.Parameters.Add("observacao", OracleType.VarChar).Value = funcionario.getObservacao();
-				c.Parameters.Add("ativo", OracleType.Int32).Value = funcionario.getAtivo();
-				c.ExecuteNonQuery();
-				return true;
-			}
+            try
+            {
+                using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+                {
+                    c.CommandType = System.Data.CommandType.Text;
+                    c.CommandText = "INSERT into FUNCIONARIOS values(FUNCIONARIOS_SEQ.NEXTVAL, :cargoid, :nome, :bairro, :estado, :endereco, :numero, :observacao, :ativo)";
+                    c.Parameters.Add("cargoid", OracleType.Int32).Value = funcionario.getCargoId();
+                    c.Parameters.Add("bairro", OracleType.VarChar).Value = funcionario.getBairro();
+                    c.Parameters.Add("nome", OracleType.VarChar).Value = funcionario.getNome();
+                    c.Parameters.Add("estado", OracleType.VarChar).Value = funcionario.getEstado();
+                    c.Parameters.Add("endereco", OracleType.VarChar).Value = funcionario.getEndereco();
+                    c.Parameters.Add("numero", OracleType.VarChar).Value = funcionario.getNumero();
+                    c.Parameters.Add("observacao", OracleType.VarChar).Value = funcionario.getObservacao();
+                    c.Parameters.Add("ativo", OracleType.Int32).Value = funcionario.getAtivo();
+                    c.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (OracleException e)
+            {
+                throw e;
+            }
 		}
 
 		public static bool Alterar(Funcionarios funcionario)
 		{
-			using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
-			{
-				c.CommandType = System.Data.CommandType.Text;
-				c.CommandText = "UPDATE FUNCIONARIOS SET cargoid=:cargoid, nome=:nome, bairro=:bairro, estado=:estado, endereco=:endereco, numero=:numero, observacao=:observacao, ativo=:ativo WHERE funcionarioid = :codigo";
-				c.Parameters.Add("cargoid", OracleType.Int32).Value = funcionario.getCargoId();
-				c.Parameters.Add("nome", OracleType.VarChar).Value = funcionario.getNome();
-				c.Parameters.Add("bairro", OracleType.VarChar).Value = funcionario.getBairro();
-				c.Parameters.Add("estado", OracleType.VarChar).Value = funcionario.getEstado();
-				c.Parameters.Add("endereco", OracleType.VarChar).Value = funcionario.getEndereco();
-				c.Parameters.Add("numero", OracleType.VarChar).Value = funcionario.getNumero();
-				c.Parameters.Add("observacao", OracleType.VarChar).Value = funcionario.getObservacao();
-				c.Parameters.Add("codigo", OracleType.Int32).Value = funcionario.getFuncionarioId();
-				c.Parameters.Add("ativo", OracleType.Int32).Value = funcionario.getAtivo();
+            try
+            {
+                using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+                {
+                    c.CommandType = System.Data.CommandType.Text;
+                    c.CommandText = "UPDATE FUNCIONARIOS SET cargoid=:cargoid, nome=:nome, bairro=:bairro, estado=:estado, endereco=:endereco, numero=:numero, observacao=:observacao, ativo=:ativo WHERE funcionarioid = :codigo";
+                    c.Parameters.Add("cargoid", OracleType.Int32).Value = funcionario.getCargoId();
+                    c.Parameters.Add("nome", OracleType.VarChar).Value = funcionario.getNome();
+                    c.Parameters.Add("bairro", OracleType.VarChar).Value = funcionario.getBairro();
+                    c.Parameters.Add("estado", OracleType.VarChar).Value = funcionario.getEstado();
+                    c.Parameters.Add("endereco", OracleType.VarChar).Value = funcionario.getEndereco();
+                    c.Parameters.Add("numero", OracleType.VarChar).Value = funcionario.getNumero();
+                    c.Parameters.Add("observacao", OracleType.VarChar).Value = funcionario.getObservacao();
+                    c.Parameters.Add("ativo", OracleType.Int32).Value = funcionario.getAtivo();
+                    c.Parameters.Add("codigo", OracleType.Int32).Value = funcionario.getFuncionarioId();
 
-				c.ExecuteNonQuery();
-				return true;
-			}
+                    c.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (OracleException e)
+            {
+                throw e;
+            }
 		}
 	}
 }

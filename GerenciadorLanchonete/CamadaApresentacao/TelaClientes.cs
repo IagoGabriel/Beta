@@ -96,7 +96,6 @@ namespace CamadaApresentacao
             tbObservacao.Enabled = false;
 			cbAtivo.Enabled = false;
 			cbAtivo.Checked = false;
-
 		}
 
         private void pbLupaCodigo_Click(object sender, EventArgs e)
@@ -175,74 +174,88 @@ namespace CamadaApresentacao
 
         private void bEfetivar_Click(object sender, EventArgs e)
         {
-			int checkAtivo;
-			String numero="";
-
-			if (rdCelular.Checked)
-			{
-				numero = mtbCelular.Text;
-			}
-			else
-			{
-				if (rdResidencial.Checked)
-				{
-					numero = mtbResidencial.Text;
-				}
-			}
-
-            if (botao == 1)
+            try
             {
-                if (tbNome.Text.Equals("") || tbEndereco.Text.Equals("") || (mtbResidencial.Text.Equals("") && mtbCelular.Text.Equals("")) || cbBairro.Text.Equals("") || tbEstado.Text.Equals(""))
+                int checkAtivo;
+                String numero = "";
+
+                if (rdCelular.Checked)
                 {
-                    MessageBox.Show("Preencha todos os campos obrigatórios: *");
+                    numero = mtbCelular.Text;
                 }
                 else
                 {
-                    if (cbAtivo.Checked)
+                    if (rdResidencial.Checked)
                     {
-                        checkAtivo = 1;
+                        numero = mtbResidencial.Text;
+                    }
+                }
+
+                if (botao == 1)
+                {
+                    if (tbNome.Text.Equals("") || tbEndereco.Text.Equals("") || (mtbResidencial.Text.Equals("") && mtbCelular.Text.Equals("")) || cbBairro.Text.Equals("") || tbEstado.Text.Equals(""))
+                    {
+                        MessageBox.Show("Preencha todos os campos obrigatórios: *");
                     }
                     else
                     {
-                        checkAtivo = 0;
-                    }
-                    if (tbObservacao.Text == "")
-                    {
-                        tbObservacao.Text = " ";
-                    }
-                    Clientes cliente = new Clientes(tbNome.Text, BairroDAO.BuscaNome(cbBairro.Text), numero, tbEndereco.Text, tbEstado.Text, tbObservacao.Text, checkAtivo);
-                    if (ClienteDAO.Inserir(cliente))
-                    {
-                        bCancelar_Click(sender, e);
-                        MessageBox.Show("Cliente " + cliente.getNome() + " foi cadastrado com sucesso!");
+                        if (cbAtivo.Checked)
+                        {
+                            checkAtivo = 1;
+                        }
+                        else
+                        {
+                            checkAtivo = 0;
+                        }
+                        if (tbObservacao.Text == "")
+                        {
+                            tbObservacao.Text = " ";
+                        }
+                        Clientes cliente = new Clientes(tbNome.Text, BairroDAO.BuscaNome(cbBairro.Text), numero, tbEndereco.Text, tbEstado.Text, tbObservacao.Text, checkAtivo);
+                        if (ClienteDAO.Inserir(cliente))
+                        {
+                            bCancelar_Click(sender, e);
+                            MessageBox.Show("Cliente " + cliente.getNome() + " foi cadastrado com sucesso!");
+                        }
                     }
                 }
-            }
 
-            if(botao == 2){
-                if (tbCodigo.Text.Equals("") || tbNome.Text.Equals("") || tbEndereco.Text.Equals("") || (mtbResidencial.Text.Equals("") && mtbCelular.Text.Equals("")) || cbBairro.Text.Equals("") || tbEstado.Text.Equals(""))
+                if (botao == 2)
                 {
-                    MessageBox.Show("Preencha todos os campos obrigatórios: *");
+                    if (tbCodigo.Text.Equals("") || tbNome.Text.Equals("") || tbEndereco.Text.Equals("") || (mtbResidencial.Text.Equals("") && mtbCelular.Text.Equals("")) || cbBairro.Text.Equals("") || tbEstado.Text.Equals(""))
+                    {
+                        MessageBox.Show("Preencha todos os campos obrigatórios: *");
+                    }
+                    else
+                    {
+                        if (cbAtivo.Checked)
+                        {
+                            checkAtivo = 1;
+                        }
+                        else
+                        {
+                            checkAtivo = 0;
+                        }
+                        if (tbObservacao.Text == "")
+                        {
+                            tbObservacao.Text = " ";
+                        }
+                        Clientes cliente = new Clientes(int.Parse(tbCodigo.Text), tbNome.Text, BairroDAO.BuscaNome(cbBairro.Text), numero, tbEndereco.Text, tbEstado.Text, tbObservacao.Text, checkAtivo);
+                        if (ClienteDAO.Alterar(cliente))
+                        {
+                            bCancelar_Click(sender, e);
+                            MessageBox.Show("Cliente " + cliente.getNome() + " foi alterado com sucesso!");
+                        }
+                    }
+                }
+            }catch(Exception ex){
+                if (ex.Message.Contains("UniqueConstraint"))
+                {
+                    MessageBox.Show("Um valor único não foi informado.");
                 }
                 else
                 {
-					if (cbAtivo.Checked) {
-						checkAtivo = 1;
-					}
-					else
-					{
-						checkAtivo = 0;
-					}
-                    if (tbObservacao.Text == "")
-                    {
-                        tbObservacao.Text = " ";
-                    }
-                    Clientes cliente = new Clientes(int.Parse(tbCodigo.Text), tbNome.Text, BairroDAO.BuscaNome(cbBairro.Text), numero, tbEndereco.Text, tbEstado.Text, tbObservacao.Text, checkAtivo);
-                    if (ClienteDAO.Alterar(cliente))
-                    {
-                        bCancelar_Click(sender, e);
-                        MessageBox.Show("Cliente " + cliente.getNome() + " foi alterado com sucesso!");
-                    }
+                    MessageBox.Show("Ocorreu um erro, contate o administrador do sistema.");
                 }
             }
         }
@@ -328,6 +341,13 @@ namespace CamadaApresentacao
 			mtbCelular.Visible = false;
 			mtbResidencial.Enabled = true;
 			mtbResidencial.Visible = true;
+
+            if ((!tbCodigo.Enabled) && botao != 1)
+            {
+                bCancelar_Click(sender, e);
+                rdResidencial.Checked = true;
+            }
+
 		}
 
 		private void rdCelular_CheckedChanged(object sender, EventArgs e)
@@ -336,6 +356,13 @@ namespace CamadaApresentacao
 			mtbResidencial.Visible = false;
 			mtbResidencial.Enabled = false;
 			mtbCelular.Visible = true;
+
+            if ((!tbCodigo.Enabled) && botao != 1)
+            {
+                bCancelar_Click(sender, e);
+                rdCelular.Checked = true;
+            }
+
 		}
 
 		private void mtbCelular_Click(object sender, EventArgs e)
@@ -349,7 +376,6 @@ namespace CamadaApresentacao
 		}
 
         private void tbCodigo_KeyPress(object sender, KeyPressEventArgs e)
-        
         {
             if (e.KeyChar == (char)Keys.Enter)
             {

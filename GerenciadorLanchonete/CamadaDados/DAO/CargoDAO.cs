@@ -55,5 +55,27 @@ namespace CamadaDados.DAO
 			}
 			return cargo;
 		}
+
+        public static int BuscaNome(String nome)
+        {
+            int bd_cargoid = 0;
+            using (OracleCommand c = ConexaoOracle.ObterConexao().CreateCommand())
+            {
+                c.CommandType = System.Data.CommandType.Text;
+                c.CommandText = "SELECT cargoid FROM cargos WHERE nome = :nome";
+                c.Parameters.Add("nome", OracleType.VarChar).Value = nome;
+
+                using (OracleDataReader leitor = c.ExecuteReader())
+                {
+                    if (leitor.HasRows)
+                    {
+                        leitor.Read();
+                        bd_cargoid = leitor.GetInt32(0);
+                    }
+                }
+            }
+            return bd_cargoid;
+        }
+
 	}
 }
