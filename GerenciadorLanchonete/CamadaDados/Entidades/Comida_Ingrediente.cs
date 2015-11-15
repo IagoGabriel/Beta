@@ -31,12 +31,6 @@ namespace CamadaDados.Entidades
             this.produtoId = produtoId;
         }
 
-        public Comida_Ingrediente( int ingredienteId, int quantidade, float produtoId)
-        {
-            this.ingredienteId = ingredienteId;
-            this.quantidade = quantidade;
-            this.produtoId = produtoId;
-        }
 
         public int getComida_ingredienteId()
         {

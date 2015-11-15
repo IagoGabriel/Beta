@@ -23,10 +23,6 @@ namespace CamadaDados.Entidades
             this.ingredienteId = ingredienteId;
         }
 
-        public Adicionais(int ingredienteId)
-        {
-            this.ingredienteId = ingredienteId;
-        }
 
         public int getAdicionalId()
         {

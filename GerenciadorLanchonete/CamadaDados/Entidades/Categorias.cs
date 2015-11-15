@@ -28,12 +28,7 @@ namespace CamadaDados.Entidades
 
         }
 
-        public Categorias(String nome, String descricao)
-        {
-            this.nome = nome;
-            this.descricao = descricao;
-
-        }
+       
 
         public int getCategoriaId()
         {

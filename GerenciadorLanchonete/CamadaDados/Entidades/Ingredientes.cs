@@ -37,17 +37,7 @@ namespace CamadaDados.Entidades
 
 
         }
-
-        public Ingredientes( float preco, String nome, int estoque, int ativo, String descricao)
-        {
-            this.preco = preco;
-            this.nome = nome;
-            this.estoque = estoque;
-            this.ativo = ativo;
-            this.descricao = descricao;
-
-
-        }
+        
 
         public int getIngredienteId()
         {

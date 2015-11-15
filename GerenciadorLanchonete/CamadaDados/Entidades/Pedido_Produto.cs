@@ -36,15 +36,7 @@ namespace CamadaDados.Entidades
             this.pedidoId = pedidoId;
             this.adicional_comidaId = adicional_comidaId;
         }
-
-        public Pedido_Produto( int produtoId, float valor, int quantidade, int pedidoId, int adicional_comidaId)
-        {
-            this.produtoId = produtoId;
-            this.valor = valor;
-            this.quantidade = quantidade;
-            this.pedidoId = pedidoId;
-            this.adicional_comidaId = adicional_comidaId;
-        }
+        
 
 
         public int getPedido_produtoId()

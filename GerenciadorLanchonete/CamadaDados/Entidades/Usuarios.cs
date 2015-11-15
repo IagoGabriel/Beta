@@ -29,14 +29,7 @@ namespace CamadaDados.Entidades
             this.senha = senha;
             this.funcionarioId = funcionarioId;
         }
-
-        public Usuarios( String nome, String senha, int funcionarioId)
-        {
-            this.nome = nome;
-            this.senha = senha;
-            this.funcionarioId = funcionarioId;
-        }
-
+        
 
         public int getUsuarioId()
         {

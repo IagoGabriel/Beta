@@ -51,20 +51,7 @@ namespace CamadaDados.Entidades
             this.cancelado = cancelado;
         }
 
-        public Pedidos(int clienteId, int funcionarioId, int entregaId, float valorTotal, float valorPago, String formaPagamento, DateTime data, float desconto, String status, int cancelado)
-        {
-            this.clienteId = clienteId;
-            this.funcionarioId = funcionarioId;
-            this.entregaId = entregaId;
-            this.valorTotal = valorTotal;
-            this.valorPago = valorPago;
-            this.formaPagamento = formaPagamento;
-            this.data = data;
-            this.desconto = desconto;
-            this.status = status;
-            this.cancelado = cancelado;
-        }
-
+        
 
         public int getPedidoId()
         {

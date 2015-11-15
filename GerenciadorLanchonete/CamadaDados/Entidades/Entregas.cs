@@ -31,13 +31,6 @@ namespace CamadaDados.Entidades
 
         }
 
-        public Entregas(int funcionarioId, String status, DateTime data)
-        {
-            this.funcionarioId = funcionarioId;
-            this.status = status;
-            this.data = data;
-
-        }
         
 
         public int getEntregaId()
