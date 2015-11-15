@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -67,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TelaProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaProdutos.Designer.cs">
+      <DependentUpon>TelaProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +100,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaProdutos.resx">
+      <DependentUpon>TelaProdutos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaClientes.resx">
       <DependentUpon>TelaClientes.cs</DependentUpon>

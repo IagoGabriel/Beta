@@ -49,13 +49,25 @@
   <ItemGroup>
     <Compile Include="DAO\BairroDAO.cs" />
     <Compile Include="DAO\CargoDAO.cs" />
+    <Compile Include="DAO\CategoriaDAO.cs" />
     <Compile Include="DAO\ClienteDAO.cs" />
     <Compile Include="DAO\ConexaoOracle.cs" />
     <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="DAO\ProdutoDAO.cs" />
+    <Compile Include="Entidades\Adicionais.cs" />
+    <Compile Include="Entidades\Adicional_Comida.cs" />
     <Compile Include="Entidades\Bairros.cs" />
     <Compile Include="Entidades\Cargos.cs" />
+    <Compile Include="Entidades\Categorias.cs" />
     <Compile Include="Entidades\Clientes.cs" />
+    <Compile Include="Entidades\Comida_Ingrediente.cs" />
+    <Compile Include="Entidades\Entregas.cs" />
     <Compile Include="Entidades\Funcionarios.cs" />
+    <Compile Include="Entidades\Ingredientes.cs" />
+    <Compile Include="Entidades\Pedidos.cs" />
+    <Compile Include="Entidades\Pedido_Produto.cs" />
+    <Compile Include="Entidades\Produtos.cs" />
+    <Compile Include="Entidades\Usuarios.cs" />
     <Compile Include="Interfaces\IConexaoBD.cs" />
     <Compile Include="Interfaces\IDAO.cs" />
     <Compile Include="Session\CreateSession.cs" />

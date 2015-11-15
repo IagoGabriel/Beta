@@ -42,3 +42,19 @@ C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\D
 C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaFuncionarios.resources
 C:\Users\Iago\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaFuncionarios.resources
 C:\Users\IAGO\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaApresentacao.exe.config
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.exe
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.pdb
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaApresentacao.exe
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaApresentacao.pdb
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaDados.dll
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaDados.pdb
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.csprojResolveAssemblyReference.cache
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.Login.resources
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.Principal.resources
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.Properties.Resources.resources
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaClientes.resources
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaFuncionarios.resources
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.csproj.GenerateResource.Cache
+C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaProdutos.resources

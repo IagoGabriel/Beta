@@ -439,17 +439,17 @@
         private System.Windows.Forms.TextBox tbObservacao;
         private System.Windows.Forms.PictureBox pbLupaCodigo;
         private System.Windows.Forms.ComboBox cbBairro;
-		private System.Windows.Forms.CheckBox cbAtivo;
-		private System.Windows.Forms.PictureBox pbLupaTelefone;
-		private System.Windows.Forms.RadioButton rdResidencial;
-		private System.Windows.Forms.RadioButton rdCelular;
-		private System.Windows.Forms.MaskedTextBox mtbResidencial;
-		private System.Windows.Forms.MaskedTextBox mtbCelular;
+        private System.Windows.Forms.CheckBox cbAtivo;
+        private System.Windows.Forms.PictureBox pbLupaTelefone;
+        private System.Windows.Forms.RadioButton rdResidencial;
+        private System.Windows.Forms.RadioButton rdCelular;
+        private System.Windows.Forms.MaskedTextBox mtbResidencial;
+        private System.Windows.Forms.MaskedTextBox mtbCelular;
         private System.Windows.Forms.Label asterisco;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-	}
+    }
 }
