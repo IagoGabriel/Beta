@@ -188,5 +188,21 @@ namespace CamadaApresentacao
 				MessageBox.Show("Não existe funcionário com esse código!");
 			}
 		}
+
+        private void rdResidencial_CheckedChanged(object sender, EventArgs e)
+        {
+            mtbCelular.Enabled = false;
+            mtbCelular.Visible = false;
+            mtbResidencial.Enabled = true;
+            mtbResidencial.Visible = true;
+        }
+
+        private void rdCelular_CheckedChanged(object sender, EventArgs e)
+        {
+            mtbCelular.Enabled = true;
+            mtbResidencial.Visible = false;
+            mtbResidencial.Enabled = false;
+            mtbCelular.Visible = true;
+        }
 	}
 }

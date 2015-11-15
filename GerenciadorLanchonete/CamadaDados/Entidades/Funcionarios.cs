@@ -35,13 +35,13 @@ namespace CamadaDados.Entidades
 		{
 			this.funcionarioId = funcionarioId;
 			this.cargoId = cargoId;
-			this.nome = nome;
+			this.nome = nome;    
 			this.bairro = bairro;
 			this.estado = estado;
 			this.endereco = endereco;
 			this.numero = numero;
 			this.numero = numero;
-			this.observacao = observacao;
+			this.observacao = observacao;this
 		}
 
 		public int getFuncionarioId()
