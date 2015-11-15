@@ -40,3 +40,4 @@ C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\D
 C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.Properties.Resources.resources
 C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaClientes.resources
 C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.csproj.GenerateResource.Cache
+C:\Users\Thayna\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaFuncionarios.resources

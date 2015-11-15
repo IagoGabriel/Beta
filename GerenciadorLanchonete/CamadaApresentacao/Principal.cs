@@ -27,5 +27,16 @@ namespace CamadaApresentacao
                 telaClientes.Show();
             }
         }
-    }
+
+		private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.IsMdiContainer = true;
+			TelaFuncionarios telaFuncionarios = new TelaFuncionarios();
+			telaFuncionarios.MdiParent = this;
+			if (Application.OpenForms.OfType<TelaFuncionarios>().Count() == 0)
+			{
+				telaFuncionarios.Show();
+			}
+		}
+	}
 }

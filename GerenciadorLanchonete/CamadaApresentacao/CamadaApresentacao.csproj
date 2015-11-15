@@ -73,6 +73,12 @@
     <Compile Include="TelaClientes.Designer.cs">
       <DependentUpon>TelaClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaFuncionarios.Designer.cs">
+      <DependentUpon>TelaFuncionarios.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaClientes.resx">
       <DependentUpon>TelaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaFuncionarios.resx">
+      <DependentUpon>TelaFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

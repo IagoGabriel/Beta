@@ -372,5 +372,10 @@ namespace CamadaApresentacao
                 pbLupaTelefone_Click(sender, e);
             }
         }
+
+		private void TelaClientes_Load(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

@@ -48,10 +48,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\BairroDAO.cs" />
+    <Compile Include="DAO\CargoDAO.cs" />
     <Compile Include="DAO\ClienteDAO.cs" />
     <Compile Include="DAO\ConexaoOracle.cs" />
+    <Compile Include="DAO\FuncionarioDAO.cs" />
     <Compile Include="Entidades\Bairros.cs" />
+    <Compile Include="Entidades\Cargos.cs" />
     <Compile Include="Entidades\Clientes.cs" />
+    <Compile Include="Entidades\Funcionarios.cs" />
     <Compile Include="Interfaces\IConexaoBD.cs" />
     <Compile Include="Interfaces\IDAO.cs" />
     <Compile Include="Session\CreateSession.cs" />
