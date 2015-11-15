@@ -58,3 +58,6 @@ C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresent
 C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaFuncionarios.resources
 C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.csproj.GenerateResource.Cache
 C:\Users\Mariane Monteiro\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.TelaProdutos.resources
+C:\Users\vera\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\bin\Debug\CamadaApresentacao.exe.config
+C:\Users\vera\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.exe
+C:\Users\vera\Source\Repos\Beta\GerenciadorLanchonete\CamadaApresentacao\obj\Debug\CamadaApresentacao.pdb
